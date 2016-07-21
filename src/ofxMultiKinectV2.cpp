@@ -239,3 +239,15 @@ ofVec3f ofxMultiKinectV2::getWorldCoordinateAt(int x, int y, float z) {
     }
     return world;
 }
+
+ofVec2f ofxMultiKinectV2::getFocus() {
+    libfreenect2::Freenect2Device::IrCameraParams p;
+    ofVec2f fov;
+    if (this->getProtonect()) {
+        p = this->getProtonect()->getIrCameraParams();
+        fov.set(p.fx, p.fy);
+    }
+    return fov;
+}
+
+

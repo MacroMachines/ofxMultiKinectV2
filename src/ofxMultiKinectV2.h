@@ -45,6 +45,9 @@ public:
     float getDistanceAt(int x, int y);
     ofVec3f getWorldCoordinateAt(int x, int y);
     ofVec3f getWorldCoordinateAt(int x, int y, float z);
+    
+    ofVec2f getFocus();
+    
 protected:
     void threadedFunction();
     
